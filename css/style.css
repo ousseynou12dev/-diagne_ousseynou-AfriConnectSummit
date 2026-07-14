@@ -1,0 +1,118 @@
+/* ==========================================================================
+   AFRICONNECT SUMMIT 2026 — STYLESHEET
+   Sommaire :
+   1. Variables & reset
+   2. Typographie
+   3. Layout utilitaires
+   4. Navbar
+   5. Hero + réseau animé (signature visuelle)
+   6. Chiffres clés
+   7. Pourquoi participer
+   8. Intervenants
+   9. Sponsors
+   10. Footer
+   11. Pages internes (hero interne, fil d'Ariane)
+   12. Programme (onglets, tableaux)
+   13. Filtrage intervenants
+   14. Contact (formulaire, FAQ accordéon, carte)
+   15. Bouton retour en haut
+   16. Media queries
+   ========================================================================== */
+
+/* ---------- 1. VARIABLES & RESET ---------- */
+:root{
+  /* Couleurs neutres */
+  --color-ink:        #17162A;
+  --color-ink-soft:    #4A4762;
+  --color-paper:       #F6EFE1;
+  --color-paper-alt:   #EEE3C9;
+  --color-line:        rgba(23, 22, 42, 0.14);
+
+  /* Couleurs principales (3 accents) */
+  --color-gold:        #E8A33D;
+  --color-burnt:       #DD4B18;
+  --color-teal:        #0F7A78;
+
+  /* Variantes pour dégradés / états */
+  --color-gold-soft:   #F6D9A4;
+  --color-burnt-soft:  #F3B79D;
+  --color-teal-soft:   #A9D6D2;
+
+  /* Typographie */
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+
+  /* Rythme / espacements */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+
+  /* Forme */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 32px;
+  --shadow-soft: 0 18px 40px -20px rgba(23, 22, 42, 0.35);
+
+  --nav-height: 76px;
+}
+
+[data-theme="dark"]{
+  --color-ink:        #F4EEDD;
+  --color-ink-soft:    #C9C2E8;
+  --color-paper:       #131022;
+  --color-paper-alt:   #1D1832;
+  --color-line:        rgba(244, 238, 221, 0.14);
+
+  --color-gold:        #F0B255;
+  --color-burnt:       #F16A38;
+  --color-teal:        #2AA6A0;
+
+  --color-gold-soft:   #4A3820;
+  --color-burnt-soft:  #4A2A1E;
+  --color-teal-soft:   #16403C;
+
+  --shadow-soft: 0 18px 45px -18px rgba(0, 0, 0, 0.6);
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+img{ max-width: 100%; display: block; }
+
+a{ color: inherit; text-decoration: none; }
+
+ul{ list-style: none; margin: 0; padding: 0; }
+
+button, input, select, textarea{ font-family: inherit; font-size: inherit; color: inherit; }
+
+h1, h2, h3, h4{
+  font-family: var(--font-display);
+  line-height: 1.1;
+  margin: 0 0 var(--space-sm);
+  letter-spacing: -0.01em;
+}
+
+p{ margin: 0 0 var(--space-sm); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+:focus-visible{
+  outline: 3px solid var(--color-teal);
+  outline-offset: 3px;
+}
